@@ -1,0 +1,268 @@
+@import url('https://fonts.googleapis.com/css?family=Oswald')
+    
+/* Variables */
+
+$bg-color: #212124
+$font-stack: 'Oswald', sans-serif
+$font-size: 2vw
+$test-color: #ffffff
+
+/* Mixins */
+
+@mixin size($height, $width)
+  width: $width
+  height: $height
+
+@mixin gradient($position, $grad1, $grad2, $shadowColor)
+  background: linear-gradient($position, $grad1, $grad2)
+  box-shadow: 4px -40px 60px 5px $shadowColor inset
+
+/* Styles */
+
+*
+  box-sizing: border-box
+  width: 100%
+  height: 100%
+  margin: auto
+
+body
+  background: $bg-color
+  font-family: $font-stack
+  font-size: $font-size
+  color: $test-color
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr 1fr 1fr
+  grid-template-rows: 0.5fr 1fr 1fr 1fr 1fr 1fr 1fr 0.5fr
+
+
+
+.large-circle-area 
+  grid-column: 2 / span 5
+  grid-row: 2 / span 5
+  display: grid
+  grid-template-columns: 1fr 1fr 1fr 1fr 1fr
+  grid-template-rows: 1fr 1fr 1fr 1fr 1fr
+  width: 80vw
+  height: 80vh
+
+li
+  list-style: none 
+
+.circle
+  @include size(150px, 150px)
+  border-radius: 100%
+  position: relative
+  
+
+.little-circle
+  @include size(40%, 40%)
+  border-radius: 100%
+  background: $bg-color
+  opacity: 0.8
+  position: absolute
+  top: 30%
+  left: 30%
+
+.circle1
+  left: 10%
+  grid-column: 1
+  grid-row: 1 
+  @include gradient(right, rgba(69, 51, 49,0.1), rgba(251, 123, 52, 1), rgba(53, 52, 50, 0.75)) 
+  animation: spin 10s linear infinite left   
+  
+.circle2
+  top: -3%
+  left: 10%
+  grid-column: 1
+  grid-row: 1 / 3
+  @include gradient(bottom, rgba(250, 204, 67, 0.9), rgba(252, 181, 115, 0.9), rgba(53, 52, 50, 0.75))   
+  z-index: 1
+  animation: spin 5s linear infinite  
+
+.circle3
+  top: 3%
+  left: 10%
+  grid-column: 1
+  grid-row: 1 / 4
+  @include gradient(left, rgba(61, 173, 99, 0.8), rgba(252, 181, 115, 0.9), rgba(150, 183, 162, 0.3))
+  animation: spin 5s linear infinite  
+
+.circle4
+  grid-column: 2
+  grid-row: 1 
+  @include gradient(left, rgba(117, 198, 254, 0.9),rgba(240, 194, 255, 0.6), rgba(150, 183, 162, 0.3))
+  z-index: 1
+  animation: spin 5s linear infinite  
+
+.circle5
+  grid-column: 2
+  grid-row: 1 / 3 
+  @include gradient(bottom, rgba(56, 146, 74,0.8),rgba(49, 65, 54,0.8), rgba(150, 183, 162, 0.3))
+  animation: spin 1s linear 5s infinite  
+
+
+.circle6
+  top: 5%
+  grid-column: 2
+  grid-row: 1 / 4
+  @include gradient(bottom, rgba(56, 146, 74,0.4),rgba(49, 65, 54,0.2), rgba(150, 183, 162, 0.3))
+  animation: spin 1s linear 5s infinite  
+
+  
+.circle7
+  top: 5%
+  left: 2%
+  grid-column: 2
+  grid-row: 1 / 4
+  @include gradient(bottom, rgba(252, 212, 99,0.8),rgba(252, 185, 229,0.6), rgba(150, 183, 162, 0.3))
+  animation: spin 1s linear 5s infinite  
+
+
+.circle8
+  top: -6%
+  grid-column: 2
+  grid-row: 2 / 5
+  @include gradient(left, rgba(55, 55, 239,0.9),rgba(83, 109, 144,0.3), rgba(150, 183, 162, 0.3))
+  animation: spin 1s linear 5s infinite  
+
+
+.circle9
+  top: -6%
+  left: 2%
+  grid-column: 2
+  grid-row: 3
+  @include gradient(left, rgba(141, 179, 168,0.8),rgba(83, 109, 144,0.3), rgba(150, 183, 162, 0.3))
+  animation: spin 1s linear 5s infinite  
+  
+
+.circle10
+  left: -10%
+  grid-column: 3
+  grid-row: 2 / 3
+  @include gradient(top, rgba(255, 78, 68,0.9),rgba(83, 109, 144,0.7),rgba(255, 78, 68,0.3))
+  animation: spin 1s linear 5s infinite  
+
+.circle11
+  top: -8%
+  left: -10%
+  grid-column: 3
+  grid-row: 2 / 3
+  @include gradient(top, rgba(244, 224, 77,0.8),rgba(83, 109, 144,0.7),rgba(255, 78, 68,0.3))
+  animation: spin 1s linear 5s infinite  
+  
+.circle12
+  top: -10% 
+  left: -10% 
+  grid-column: 3
+  grid-row:  3  
+  @include gradient(top, rgba(172, 59, 125,0.8),rgba(83, 109, 144,0.7),rgba(255, 78, 68,0.3))
+  animation: spin 1s linear 5s infinite     
+
+.circle13
+  top: -15%
+  left: -10%
+  grid-column: 3
+  grid-row: 4
+  @include gradient(top, rgba(244, 224, 77,0.8),rgba(83, 109, 144,0.7),rgba(255, 78, 68,0.3)) 
+  animation: spin 1s linear 5s infinite    
+
+.circle14
+  top: -15%
+  left: -10%
+  grid-column: 3
+  grid-row: 5 
+  @include gradient(right, rgba(100, 172, 254, 0.8),rgba(83, 109, 144,0.7),rgba(255, 78, 68,0.3)) 
+  animation: spin 1s linear 5s infinite    
+
+.circle15
+  left: -25%
+  grid-column: 4
+  grid-row: 1
+  @include gradient(right, rgb(86, 86, 860.7),rgba(115, 115, 103,0.7),rgb(93, 93, 91))
+  animation: spin 1s linear 5s infinite     
+
+.circle16
+  left: -25%
+  top: -9%
+  grid-column: 4
+  grid-row: 2
+  @include gradient(right, rgb(86, 86, 860.7),rgba(115, 115, 103,0.7),rgb(93, 93, 91)) 
+  animation: spin 1s linear 5s infinite    
+
+
+.circle17
+  left: -25%
+  top: 13%
+  grid-column: 4
+  grid-row: 2 / 3 
+  @include gradient(right,rgba(251, 130, 51,0.7),rgba(255, 65, 96, 0.8),rgba(251, 130, 51,0.7))
+  animation: spin 1s linear 5s infinite    
+
+.circle18
+  left: -20%
+  grid-column: 4
+  grid-row: 3 
+  @include gradient(right,rgba(253, 248, 254, 0.9),rgba(245, 220, 241,0.8),rgba(251, 130, 51,0.7)) 
+  animation: spin 1s linear 5s infinite    
+
+.circle19
+  left: -21%
+  top: 5%
+  grid-column: 4
+  grid-row: 3
+  @include gradient(left,rgba(253, 248, 254, 0.9),rgba(213, 169, 244, 0.3),rgba(251, 130, 51,0.3))
+  animation: spin 1s linear 5s infinite    
+
+.circle20
+  left: -20%
+  top: 5%
+  grid-column: 4
+  grid-row: 3  
+  @include gradient(bottom,rgba(147, 152, 132, 1),rgba(213, 169, 244, 0.3),rgba(49, 46, 250, 1))
+  animation: spin 1s linear 10s infinite    
+
+.circle21
+  left: -30%
+  grid-column: 5
+  grid-row: 2 
+  @include gradient(right, rgb(86, 86, 860.7),rgba(115, 115, 103,0.7),rgb(93, 93, 91))
+  animation: spin 5s linear infinite  
+
+.circle22
+  left: -30%
+  top: -5%
+  grid-column: 5
+  grid-row: 4
+  @include gradient(right,rgba(56, 208, 169, 0.8),rgb(207, 133, 134),rgb(93, 93, 91))
+  animation: spin 5s linear infinite     
+
+body .music
+ display: grid  
+ grid-column: 1 / span 2
+ grid-row: 5
+ margin: 3%
+ padding: 0
+
+@keyframes spin
+ 0% 
+  transform: rotateZ(0deg)
+ 50% 
+  transform: rotateZ(180deg)
+ 100% 
+  transform: rotateZ(360deg)
+
+ 
+  
+   
+
+
+ 
+    
+  
+
+
+ 
+
+
+ 
+
